@@ -2,6 +2,7 @@
 import displayFollower from "../utils/displayFollowers.js";
 import fetchFollowers from "../utils/fetchFollowers.js";
 import getElement from "../utils/getElement.js";
+import paginate from "../utils/paginate.js";
 
 const title = getElement(".section-title h1");
 // declaring the callback func of invoked in the window object
@@ -11,7 +12,10 @@ const init = async () => {
   //   changing the title text when the followers data has been fetched
   title.textContent = "Github Users";
   //   display each fetched data of a follower into the HTML
-  displayFollower(followers);
+  displayFollower(paginate(followers)[0]);
+  //
+  const pages = paginate(followers);
+  console.log(pages);
 };
 
 // an event that listen to the browser object for a load event
