@@ -1,6 +1,6 @@
 const paginate = (followers) => {
   // stating the number of users ot display per page (in each page)
-  const userPerPage = 9;
+  const userPerPage = 12;
   //   getting the number of pages that will be need to display all followers array (divide the length of the user array by the users to be displayed per page)
   const numberOfPages = followers.length / userPerPage;
   //   round the number of pages to get a rounded figure of pages need
